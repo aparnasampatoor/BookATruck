@@ -6,9 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/oauth.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,7 +32,23 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href="http://www.redbus.in/AboutUs.aspx">About BookATruck</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="http://www.redbus.in/FAQ.aspx">FAQ</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="http://www.redbus.in/redBus_offers.aspx">Offers</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="http://www.redbus.in/ContactUs.aspx">Contact Us</a>
+                </div>
+    
+                
+            </div>
+
         </footer>
     </div>
 
