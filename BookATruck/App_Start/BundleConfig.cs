@@ -8,6 +8,13 @@ namespace BookATruck
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/angularModules")
+            .Include("~/app/app.module.js")
+            .Include("~/app/app.config.js")
+            .IncludeDirectory("~/app/", "*.js", false)
+            .IncludeDirectory("~/app/", "*.js", true)
+                );
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

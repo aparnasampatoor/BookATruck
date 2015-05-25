@@ -30,3 +30,11 @@ footer {
 footer li {
     display: inline;
 }
+
+.search-container {
+    padding-top: 60px;
+}
+
+.main-content {
+    min-height: 500px;
+}
