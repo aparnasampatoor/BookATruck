@@ -8,8 +8,8 @@ namespace BookATruck.Models
     {
         public BookTruckDbContext(): base("DefaultConnection")
         {
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookTruckDbContext>());
-            Database.SetInitializer<BookTruckDbContext>(null);
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookTruckDbContext>());
+            //Database.SetInitializer<BookTruckDbContext>(null);
 
         }
 

@@ -25,13 +25,16 @@ namespace BookATruck.Api
             base.Initialize(controllerContext);
 
             var cookie = Request.Headers.GetCookies("BookTruck").FirstOrDefault();
-            if (cookie == null)
+            if (cookie != null)
             {
-                throw new HttpException(401, "Cookie not found");
+                var cookieValue = cookie["BookTruck"].Value;
+                var user = JsonConvert.DeserializeObject<User>(cookieValue);
+                if (user != null)
+                {
+                    User = user;
+                }
             }
-            var cookieValue = cookie["BookTruck"].Value;
-            var user = JsonConvert.DeserializeObject<User>(cookieValue);
-
+            
         }
     }
 }

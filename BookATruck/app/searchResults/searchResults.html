@@ -7,17 +7,23 @@
                     <th style="width: 50%">Action</th>
                 </tr>
             </thead>
-            <tbody ng-repeat="route in vm.routes" ng-show="vm.isLoading == false">
-            <tr>
-                <td>{{route.PostedByName}}</td>
-                <td>
-                    <button class="btn btn-danger" ng-click="vm.booktruck()">Book Now</button>
-                </td>
-            </tr>
+            <tbody ng-repeat="route in vm.routes" ng-show="vm.isLoading == false && vm.routes.length > 0">
+                <tr>
+                    <td>{{route.PostedByName}}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="vm.booktruck()">Book Now</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody ng-show="vm.isLoading == false && vm.routes.length == 0">
+                <tr><td colspan="2">No matching routes found</td></tr>
             </tbody>
             <tbody ng-show="vm.isLoading == true">
-            <tr><td colspan="2">Loading</td></tr>
+                <tr><td colspan="2">Loading</td></tr>
             </tbody>
         </table>
     </div>
+    <br />
+    <br />
+    <a href="#/" class="btn btn-default">Back to Home Page</a>
 </section>
