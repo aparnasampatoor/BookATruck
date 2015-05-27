@@ -8,7 +8,7 @@
         var vm = this;
         vm.source = '';
         vm.destination = '';
-        vm.fromDate = '';
+        vm.fromDate=null;
         activate();
 
         function activate() {
@@ -18,6 +18,9 @@
         vm.searchTrucks = function() {
             console.log(vm.source);
             console.log(vm.destination);
+            console.log(vm.fromDate);
+
+            $location.url('/searchResults?Source=' + vm.source + '&Destination=' + vm.destination + '&FromDate=' + vm.fromDate.getTime());
         }
 
         vm.getCities = function(q) {
@@ -30,10 +33,17 @@
                         cities.push(citySplit[0]);
                     }
                 });
+                
                 return cities;
             });
 
         }
+        vm.open = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            vm.opened = true;
+        };
 
     }
 })();

@@ -38,3 +38,8 @@ footer li {
 .main-content {
     min-height: 500px;
 }
+
+.login-image {
+    height: 25px;
+    width: 25px;
+}
