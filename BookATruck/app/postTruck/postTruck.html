@@ -9,18 +9,24 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="form-group">
-                    <input id="destination" type="text" class="form-control  " ng-model="vm.destination" typeahead-editable="false" name="destination" placeholder="DropOff" typeahead-append-to-body="true"
-                           typeahead="city for city in vm.getCities($viewValue)  | limitTo:8" required>
+                    <div class="row">
+                        <div class="col-xs-11">
+                            <input id="destination" type="text" class="form-control  " ng-model="vm.destination" typeahead-editable="false" name="destination" placeholder="DropOff" typeahead-append-to-body="true"
+                                   typeahead="city for city in vm.getCities($viewValue)  | limitTo:8" required>
+                        </div>
+                        <div class="col-xs-1 pad-left-0">
+                            <div>
+                                <span class="glyphicon glyphicon-plus black pull-right" style="padding-top: 15px" ng-click="vm.addDestination()"></span>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
-                <div class="form-group">
-                    <p class="input-group">
-                        <input required type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="vm.fromDate" is-open="vm.opened" min-date="minDate" close-text="Close" placeholder="dd-MMMM-yyyy"/>
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-danger" ng-click="vm.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                    </p>
+                <div class="form-group has-feedback">
+                    <input required type="text" class="form-control " datepicker-popup="dd-MMMM-yyyy" ng-model="vm.fromDate" is-open="vm.opened" min-date="'today'" close-text="Close" placeholder="dd-MMMM-yyyy" ng-click="vm.open($event)"/>
+                    <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
@@ -29,17 +35,17 @@
                 </div>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-xs-12 col-md-3 col-lg-3 ">
                 <button class="btn btn-warning " ng-show="vm.posted == true" type="button">
                     Route posted successfully
                 </button>
                 <br />
-                <br/>
+                <br />
                 <a href="#/" class="btn btn-default">Back to Home Page</a>
 
             </div>
         </div>
     </section>
 </form>
-

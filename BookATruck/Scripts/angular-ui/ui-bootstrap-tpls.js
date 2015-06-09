@@ -1685,6 +1685,17 @@ function ($compile, $parse, $document, $position, dateFilter, dateParser, datepi
             date = new Date(today.setHours(0, 0, 0, 0));
           }
         }
+        if (date === 'tomorrow') {
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            if (angular.isDate(scope.date)) {
+                date = new Date(scope.date);
+                date.setFullYear(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
+            } else {
+                date = new Date(tomorrow.setHours(0, 0, 0, 0));
+            }
+        }
+
         scope.dateSelection( date );
       };
 
@@ -4572,14 +4583,14 @@ angular.module("template/datepicker/month.html", []).run(["$templateCache", func
 angular.module("template/datepicker/popup.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/datepicker/popup.html",
     "<ul class=\"dropdown-menu\" ng-style=\"{display: (isOpen && 'block') || 'none', top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\">\n" +
-    "	<li ng-transclude></li>\n" +
-    "	<li ng-if=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
+    "	<li ng-if=\"showButtonBar\" style=\"padding:5px 9px 5px\">\n" +
     "		<span class=\"btn-group pull-left\">\n" +
-    "			<button type=\"button\" class=\"btn btn-sm btn-info\" ng-click=\"select('today')\">{{ getText('current') }}</button>\n" +
-    "			<button type=\"button\" class=\"btn btn-sm btn-danger\" ng-click=\"select(null)\">{{ getText('clear') }}</button>\n" +
+    "			<button type=\"button\" class=\"btn btn-sm btn-default\" ng-click=\"select('today')\">{{ getText('current') }}</button>\n" +
+    "			<button type=\"button\" class=\"btn btn-sm btn-default\" ng-click=\"select('tomorrow')\">Tomorrow</button>\n" +
     "		</span>\n" +
-    "		<button type=\"button\" class=\"btn btn-sm btn-success pull-right\" ng-click=\"close()\">{{ getText('close') }}</button>\n" +
+    "		<button type=\"button\" class=\"btn btn-sm btn-danger pull-right\" ng-click=\"select(null)\">{{ getText('clear') }}</button>\n" +
     "	</li>\n" +
+    "	<li ng-transclude></li>\n" +
     "</ul>\n" +
     "");
 }]);

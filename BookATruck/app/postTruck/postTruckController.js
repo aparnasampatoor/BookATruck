@@ -10,6 +10,12 @@
         vm.destination = '';
         vm.fromDate = null;
         vm.posted = false;
+        vm.loadType = '';
+        vm.volume = '';
+        vm.weight = '';
+        vm.truckType = '';
+        vm.handlingRequirements = '';
+
         activate();
 
         function activate() {

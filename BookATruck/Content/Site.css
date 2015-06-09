@@ -43,3 +43,44 @@ footer li {
     height: 25px;
     width: 25px;
 }
+
+.logo {
+    max-height: 32px;
+    max-width: 32px;
+    margin-right: 10px;
+}
+
+.black {
+    color: black;
+}
+
+.pad-left-0 {
+    padding-left: 0px;
+}
+
+.pad-right-0 {
+    padding-right: 0px;
+}
+
+.pad-right-5 {
+    padding-right: 5px;
+}
+
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }

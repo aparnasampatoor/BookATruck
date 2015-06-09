@@ -24,7 +24,9 @@
         }
 
         vm.getCities = function(q) {
-
+            if (q.length < 3) {
+                return [];
+            }
             return $.getJSON('http://gd.geobytes.com/AutoCompleteCity?callback=?&filter=IN&q=' + q).then(function(results) {
                 var cities = [];
                 $.each(results, function(index, item) {

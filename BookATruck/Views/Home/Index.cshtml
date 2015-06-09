@@ -10,25 +10,32 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#/">
-                        HireATruck
-                        @*<img src="~/Content/images/logo-red-lorry.png" class="img-thumbnail"/>*@
+                        Hire A Truck
+                        <img src="~/Content/images/redtruck.jpg" class="logo pull-left"/>
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" ng-controller="navController">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#/postTruck">Post a Route </a></li>
+                        <li>
+                            <a href="#/postTruck">Post a Route </a>
+                        </li>
                         <li class="pull-right" ng-show="loggedIn == false">
                             <a href="" ng-click="FacebookLogin()">
-                                <img src="~/Content/images/logo_facebook.png" class="login-image" />
+                                <img src="~/Content/images/logo_facebook.png" class="login-image"/>
 
                             </a>
                         </li>
                         <li class="pull-right" ng-show="loggedIn == false">
                             <a href="" ng-click="GoogleLogin()">
-                                <img src="~/Content/images/logo_google.png" class="login-image" />
+                                <img src="~/Content/images/logo_google.png" class="login-image"/>
                             </a>
                         </li>
-                        <li class="pull-right" ng-show="loggedIn == true"><a href="" ng-click="Logout()">Logout</a></li>
+                        <li class="pull-right" ng-show="loggedIn == true">
+                            <a href="" ng-click="Logout()">Logout</a>
+                        </li>
+                        <li class="pull-right">
+                            <div id="google_translate_element"></div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +43,7 @@
         <div class="container body-content">
             <div ng-view class="main-content">
             </div>
-            <hr />
+            <hr/>
             <footer>
                 <div class="row">
                     <div class="col-xs-3">
@@ -58,11 +65,16 @@
 </div>
 
 <script type="text/javascript">
-    var loggedIn = @ViewBag.Loggedin ;
-    $('.body-content').on('click', function(){
-        if($('.navbar-collapse').attr('aria-expanded') == "true")
-        {
-            $(".navbar-toggle").trigger('click'); //bootstrap 3.x by Richard
+    var loggedIn = @ViewBag.Loggedin;
+    $('.body-content').on('click', function() {
+        if ($('.navbar-collapse').attr('aria-expanded') === "true") {
+            $(".navbar-toggle").trigger('click');
         }
     });
 </script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
