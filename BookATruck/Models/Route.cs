@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Web;
 
-namespace AbhiDurandal.Models
+namespace BookATruck.Models
 {
     public class Route : EntityBase
     {
@@ -19,6 +15,21 @@ namespace AbhiDurandal.Models
 
         public string PostedByName { get; set; }
 
+        public LoadType? LoadType { get; set; }
+
+        public int? Volume { get; set; }
+
+        public int? Weight { get; set; }
+
+        //public TruckType TruckType { get; set; }
+
+        public int TruckTypeId { get; set; }
+    }
+
+    public enum LoadType
+    {
+        FullTruckLoad = 1,
+        PartialLoad = 2
     }
 
     public class RouteMap : EntityTypeConfiguration<Route>

@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using AbhiDurandal.Models;
 
 namespace BookATruck.Models
 {
@@ -8,7 +7,7 @@ namespace BookATruck.Models
     {
         public BookTruckDbContext(): base("DefaultConnection")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookTruckDbContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<BookTruckDbContext>());
             //Database.SetInitializer<BookTruckDbContext>(null);
 
         }

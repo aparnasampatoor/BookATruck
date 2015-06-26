@@ -134,6 +134,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BookTruckDbContext.cs" />
+    <Compile Include="Models\RouteFilter.cs" />
+    <Compile Include="Models\TruckType.cs" />
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

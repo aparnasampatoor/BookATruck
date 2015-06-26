@@ -6,29 +6,38 @@
 
     function postTruckController($location, $q, $http, $timeout) {
         var vm = this;
-        vm.source = '';
-        vm.destination = '';
-        vm.fromDate = null;
         vm.posted = false;
-        vm.loadType = '';
-        vm.volume = '';
-        vm.weight = '';
-        vm.truckType = '';
-        vm.handlingRequirements = '';
+        vm.truckTypes = [];
 
         activate();
 
         function activate() {
+            initializeRoute();
+            $http.get('api/booktruck/TruckTypes').then(function (response) {
+                vm.truckTypes = response.data;
+                vm.route.truckType = vm.truckTypes[0];
+                vm.route.truckTypeId = vm.truckTypes.Id;
+                });
+        }
+
+        function initializeRoute() {
+            vm.route = {
+                source: '',
+                destination: '',
+                fromDate: null,
+                loadType: '',
+                volume: '',
+                weight: '',
+                truckType: vm.truckTypes[0] ? vm.truckTypes[0] : { Id: 0, Name: 'Select Truck Type' },
+                truckTypeId: 0,
+                handlingRequirements: ''
+            };
         }
 
         vm.postTruck = function () {
-            console.log(vm.source);
-            console.log(vm.destination);
-            var route = { 'Source': vm.source, 'Destination': vm.destination, 'FromDate': vm.fromDate };
-            $http.post('api/booktruck/Route', route).then(function () {
-                vm.source = '';
-                vm.destination = '';
-                vm.fromDate = null;
+            $http.post('api/booktruck/Route', vm.route).then(function () {
+                initializeRoute();
+
                 vm.posted = true;
 
                 $timeout(function() {
@@ -36,6 +45,11 @@
                 }, 3000);
             });
         }
+
+        vm.truckTypeChanged = function(truckType) {
+            vm.route.truckType = truckType;
+            vm.route.truckTypeId = vm.route.truckType.Id;
+        };
 
         vm.getCities = function (q) {
 
