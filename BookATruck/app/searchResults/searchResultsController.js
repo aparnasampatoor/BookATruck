@@ -37,7 +37,7 @@
                 weightEnd: null,
                 truckType: vm.truckTypes[0] ? vm.truckTypes[0] : ''
             };
-
+            vm.searchRoutes();
         };
 
         activate();
