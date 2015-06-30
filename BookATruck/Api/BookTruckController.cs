@@ -95,7 +95,22 @@ namespace BookATruck.Api
                 {
                     routesQuery = routesQuery.Where(x => x.LoadType == route.LoadType);
                 }
-
+                if (route.VolumeStart != null)
+                {
+                    routesQuery = routesQuery.Where(x => x.Volume >= route.VolumeStart);
+                }
+                if (route.VolumeEnd != null)
+                {
+                    routesQuery = routesQuery.Where(x => x.Volume <= route.VolumeEnd);
+                }
+                if (route.WeightStart != null)
+                {
+                    routesQuery = routesQuery.Where(x => x.Weight >= route.WeightStart);
+                }
+                if (route.WeightEnd != null)
+                {
+                    routesQuery = routesQuery.Where(x => x.Weight <= route.WeightEnd);
+                }
                 routes = routesQuery.ToList();
             }
             var httpResponseMessage = Request.CreateResponse(HttpStatusCode.OK, routes);

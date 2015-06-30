@@ -15,9 +15,11 @@ namespace BookATruck.Models
 
         public LoadType? LoadType { get; set; }
 
-        public int? Volume { get; set; }
+        public int? VolumeStart { get; set; }
+        public int? VolumeEnd { get; set; }
 
-        public int? Weight { get; set; }
+        public int? WeightStart { get; set; }
+        public int? WeightEnd { get; set; }
 
         public int TruckTypeId { get; set; }
     }

@@ -11,29 +11,26 @@
                     </button>
                     <a class="navbar-brand" href="#/">
                         Hire A Truck
-                        <img src="~/Content/images/redtruck.jpg" class="logo pull-left"/>
+                        <img src="~/Content/images/redtruck.jpg" class="logo pull-left" />
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" ng-controller="navController">
                     <ul class="nav navbar-nav navbar-right">
-                        
-                        @*<li class="pull-right">
-                            <a href="#/postTruck"><div id="google_translate_element"></div></a>
-                        </li>*@
+
                         <li class="pull-right" ng-show="loggedIn == false">
                             <a href="" ng-click="FacebookLogin()">
-                                <img src="~/Content/images/logo_facebook.png" class="login-image"/>
+                                <img src="~/Content/images/logo_facebook.png" class="login-image" />
                             </a>
                         </li>
                         <li class="pull-right" ng-show="loggedIn == false">
                             <a href="" ng-click="GoogleLogin()">
-                                <img src="~/Content/images/logo_google.png" class="login-image"/>
+                                <img src="~/Content/images/logo_google.png" class="login-image" />
                             </a>
                         </li>
                         <li class="pull-right" ng-show="loggedIn == true">
                             <a href="" ng-click="Logout()">Logout</a>
                         </li>
-                        <li class="pull-right">
+                        <li class="pull-right" ng-show="loggedIn == true">
                             <a href="#/postTruck">Post a Route </a>
                         </li>
                     </ul>
@@ -43,31 +40,31 @@
         <div class="container body-content">
             <div class="row">
                 <div class="col-xs-12">
-                    <div id="google_translate_element" class="pull-right" style="padding-top: 10px;"></div>
+                    <div id="google_translate_element" class="pull-right"></div>
                 </div>
             </div>
-            <br/>
             <div ng-view class="main-content">
             </div>
-            <hr/>
-            <footer>
-                <div class="row">
-                    <div class="col-xs-3">
-                        <a href="http://www.redbus.in/AboutUs.aspx">About HireATruck</a>
-                    </div>
-                    <div class="col-xs-3">
-                        <a href="http://www.redbus.in/FAQ.aspx">FAQ</a>
-                    </div>
-                    <div class="col-xs-3">
-                        <a href="http://www.redbus.in/redBus_offers.aspx">Offers</a>
-                    </div>
-                    <div class="col-xs-3">
-                        <a href="http://www.redbus.in/ContactUs.aspx">Contact Us</a>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 pad-right-0">
+                    <a href="">About HireATruck</a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="">FAQ</a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="">Offers</a>
+                </div>
+                <div class="col-xs-4 ">
+                    <a href="">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 
 <script type="text/javascript">
@@ -78,9 +75,10 @@
         }
     });
 </script>
+<div id="google_translate_element"></div>
 <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

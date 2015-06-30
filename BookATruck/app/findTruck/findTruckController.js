@@ -2,9 +2,9 @@
     angular.module('app')
         .controller('findTruckController', findTruckController);
 
-    findTruckController.$inject = ['$location', '$q'];
+    findTruckController.$inject = ['$location', '$q', '$http'];
 
-    function findTruckController($location, $q) {
+    function findTruckController($location, $q, $http) {
         var vm = this;
         vm.source = '';
         vm.destination = '';
@@ -24,22 +24,13 @@
         }
 
         vm.getCities = function(q) {
-            if (q.length < 3) {
-                return [];
-            }
-            return $.getJSON('http://gd.geobytes.com/AutoCompleteCity?callback=?&filter=IN&q=' + q).then(function(results) {
-                var cities = [];
-                $.each(results, function(index, item) {
-                    if (item !== "%s") {
-                        var citySplit = item.split(',');
-                        cities.push(citySplit[0]);
-                    }
-                });
-                
-                return cities;
+
+            return $http.get("api/Lookups/Cities/" + q).then(function(response) {
+                return response.data;
             });
 
-        }
+        };
+
         vm.open = function ($event) {
             $event.preventDefault();
             $event.stopPropagation();

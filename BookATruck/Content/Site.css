@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    top: 0px !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,27 +17,20 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 footer {
-    
 }
 
-footer li {
-    display: inline;
-}
+    footer li {
+        display: inline;
+    }
 
 .search-container {
     padding-top: 10px;
 }
 
 .main-content {
-    min-height: 500px;
+    min-height: 400px;
+    padding-top: 5px;
 }
 
 .login-image {
@@ -66,26 +60,207 @@ footer li {
     padding-right: 5px;
 }
 
-.inner-addon { 
-    position: relative; 
+.inner-addon {
+    position: relative;
 }
 
-/* style icon */
-.inner-addon .glyphicon {
-  position: absolute;
-  padding: 10px;
-  pointer-events: none;
-}
+    /* style icon */
+    .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+    }
 
 /* align icon */
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
 
 /* add padding  */
-.left-addon input  { padding-left:  30px; }
-.right-addon input { padding-right: 30px; }
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
 
 .inline-block {
     display: inline-block;
     margin-right: 30px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    
+}
+
+.label-as-badge {
+    border-radius: 1em;
+    font-size: .9em;
+    background-color: #eee;
+    color: #333333;
+}
+
+.btn-white {
+    color: #333333;
+    background-color: #EEEEEE;
+    border-color: #EEEEEE;
+}
+
+    .btn-white:focus,
+    .btn-white.focus {
+        color: #333333;
+        background-color: whitesmoke;
+        border-color: #ffffff;
+    }
+
+    .btn-white:hover {
+        color: #333333;
+        background-color: whitesmoke;
+        border-color: ##EEEEEE;
+    }
+
+    .btn-white:active,
+    .btn-white.active,
+    .open > .dropdown-toggle.btn-white {
+        color: #333333;
+        background-color: whitesmoke;
+        border-color: ##EEEEEE;
+    }
+
+        .btn-white:active:hover,
+        .btn-white.active:hover,
+        .open > .dropdown-toggle.btn-white:hover,
+        .btn-white:active:focus,
+        .btn-white.active:focus,
+        .open > .dropdown-toggle.btn-white:focus,
+        .btn-white:active.focus,
+        .btn-white.active.focus,
+        .open > .dropdown-toggle.btn-white.focus {
+            color: #333333;
+            background-color: #ffffff;
+            border-color: #ffffff;
+        }
+
+    .btn-white:active,
+    .btn-white.active,
+    .open > .dropdown-toggle.btn-white {
+        background-image: none;
+    }
+
+    .btn-white.disabled,
+    .btn-white[disabled],
+    fieldset[disabled] .btn-white,
+    .btn-white.disabled:hover,
+    .btn-white[disabled]:hover,
+    fieldset[disabled] .btn-white:hover,
+    .btn-white.disabled:focus,
+    .btn-white[disabled]:focus,
+    fieldset[disabled] .btn-white:focus,
+    .btn-white.disabled.focus,
+    .btn-white[disabled].focus,
+    fieldset[disabled] .btn-white.focus,
+    .btn-white.disabled:active,
+    .btn-white[disabled]:active,
+    fieldset[disabled] .btn-white:active,
+    .btn-white.disabled.active,
+    .btn-white[disabled].active,
+    fieldset[disabled] .btn-white.active {
+        background-color: #EEEEEE;
+        border-color: #EEEEEE;
+    }
+
+    .btn-white .badge {
+        color: #EEEEEE;
+        background-color: #333333;
+    }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color:  #e6335b !important;
+    background-color:  rgba(230, 51, 91, 0.75) !important;
+}
+
+ul[datepicker-popup-wrap] table:focus {
+    outline: none;
+}
+
+ul[datepicker-popup-wrap] .btn-default {
+    border: 0;
+    border-radius: 0px;
+    background-color: white;
+    background-image: none;
+    color: #333333;
+}
+
+    ul[datepicker-popup-wrap] .btn-default.active {
+        color: #333333;
+        background-color: #dbdada;
+    }
+
+.date-picker-button {
+    cursor: pointer;
+}
+
+button.dropdown-toggle > .caret {
+    position: absolute;
+    top: 20px;
+    right: 6px;
+}
+
+.goog-te-gadget-icon {
+    display: none;
+}
+
+.goog-te-gadget-simple a {
+    text-decoration: none !important;
+}
+
+.goog-te-gadget-simple {
+    margin-bottom: 5px;
+}
+
+option:hover, option:active, option:focus, option:visited { 
+   background-color:  rgba(230, 51, 91, 0.52) !important;
+    background-color: red !important;
+}
+
+.panel-body {
+    padding: 0px 10px 10px 10px;
+    background-color: #f7f7f7;
+    
+}
+
+footer {
+    background-color: #333333;
+    
+}
+
+footer a , a:hover, a:visited{
+    color: white;
+    text-decoration: none;
+    font-size: .8em;
+    
+}
+
+footer {
+    min-height: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+#google_translate_element {
+    margin-bottom: 0px;
+    padding-top: 15px;
+}
+
+.goog-te-gadget-simple {
+    padding: 5px !important;
 }

@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\BookTruckController.cs" />
+    <Compile Include="Api\LookupsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -136,6 +137,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BookTruckDbContext.cs" />
+    <Compile Include="Models\City.cs" />
     <Compile Include="Models\RouteFilter.cs" />
     <Compile Include="Models\TruckType.cs" />
     <Compile Include="Models\Route.cs" />
@@ -158,6 +160,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\filter.jpg" />
     <Content Include="Content\images\logo-red-lorry.png" />
     <Content Include="Content\images\logo_facebook.png" />
     <Content Include="Content\images\logo_google.png" />

@@ -41,6 +41,15 @@
             $scope.loggedIn = false;
         }
 
+        $scope.$watch(function() {
+            return $scope.loggedIn;
+        }, function () {
+            console.log($location.path());
+            if ($location.path() == '/postTruck') {
+                $location.path('/');
+            }
+        });
+
         $scope.GoogleLogin = function () {
             if ($scope.loggedIn == false) {
                 OAuth.popup('google').done(function(result) {

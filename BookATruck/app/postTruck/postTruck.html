@@ -1,5 +1,13 @@
-﻿<form>
+﻿<form name="postTruckForm" id="postTruckForm">
     <section class="search-container">
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-xs-12 col-md-3 col-lg-3 ">
+                <label class="label label-as-badge" ng-show="vm.posted == true">
+                    <span class="glyphicon glyphicon-ok" style="margin-right: 5px; color: green"></span>
+                    <small>Route posted successfully</small>
+                </label>
+            </div>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="form-group">
@@ -14,25 +22,13 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
-                <div class="form-group has-feedback">
-                    <input required type="text" class="form-control " datepicker-popup="dd-MMMM-yyyy" ng-model="vm.route.fromDate" is-open="vm.opened" min-date="'today'" close-text="Close" placeholder="dd-MMMM-yyyy" ng-click="vm.open($event)" />
-                    <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                <div class="form-group ">
+                    <input type="text" class="form-control " datepicker-popup="dd-MMMM-yyyy" ng-model="vm.route.fromDate" is-open="vm.opened" min-date="vm.today" close-text="Close" placeholder="dd-MMMM-yyyy" ng-click="vm.open($event)" required />
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3" ng-cloak>
-                <div class="form-group" style="width: 100%">
-                    <div class="btn-group" style="width: 100%">
-                        <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" aria-expanded="false">
-                            {{vm.route.truckType.Name}} <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li ng-repeat="truckType in vm.truckTypes">
-                                <a href="" ng-click="vm.truckTypeChanged(truckType)">
-                                    {{truckType.Name}}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="form-group">
+                    <select id="truckType" class="form-control" ng-model="vm.route.truckType" ng-change="vm.truckTypeChanged()" ng-options="truckType.Name for truckType in vm.truckTypes"></select>
                 </div>
             </div>
 
@@ -57,30 +53,24 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="form-group ">
-                    <input type="number" ng-model="vm.route.volume" class="form-control" placeholder="Volume of goods" />
+                    <input type="number" min="0" ng-model="vm.route.volume" class="form-control" placeholder="Volume of goods (Cubic ft)" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="form-group ">
-                    <input type="number" ng-model="vm.route.weight" class="form-control" placeholder="Weight of goods" />
+                    <input type="number" min="0" ng-model="vm.route.weight" class="form-control" placeholder="Weight of goods (kg)" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="form-group search-btn-container">
-                    <button class="btn btn-danger form-control" ng-click="vm.postTruck()">POST ROUTE</button>
+                    <button class="btn btn-danger form-control" ng-click="vm.postTruck(postTruckForm)">POST ROUTE</button>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-md-3 col-lg-3 ">
-                <button class="btn btn-warning " ng-show="vm.posted == true" type="button">
-                    Route posted successfully
-                </button>
-                <br/>
-                <br/>
-                <a href="#/" class="btn btn-default">Back to Home Page</a>
-
+        <br />
+        <div class="row"style="margin-bottom: 10px">
+            <div class="col-xs-12">
+                <a href="#/" style="color: black; font-size: .8em">Back to Home Page</a>
             </div>
         </div>
     </section>
